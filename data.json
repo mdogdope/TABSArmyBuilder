@@ -1,0 +1,586 @@
+{
+    "tribal": {
+        "clubber": {
+            "cost": "70",
+            "hp": "80"
+        },
+        "protector": {
+            "cost": "80",
+            "hp": "77"
+        },
+        "spear-thrower": {
+            "cost": "120",
+            "hp": "50"
+        },
+        "stoner": {
+            "cost": "160",
+            "hp": "50"
+        },
+        "bone-mage": {
+            "cost": "300",
+            "hp": "100"
+        },
+        "chieftain": {
+            "cost": "400",
+            "hp": "265"
+        },
+        "mammoth": {
+            "cost": "2200",
+            "hp": "2500"
+        }
+    },
+    "farmer": {
+        "halfling": {
+            "cost": "50",
+            "hp": "120"
+        },
+        "farmer": {
+            "cost": "80",
+            "hp": "60"
+        },
+        "hay-baler": {
+            "cost": "140",
+            "hp": "80"
+        },
+        "potionseller": {
+            "cost": "340",
+            "hp": "60"
+        },
+        "harvester": {
+            "cost": "500",
+            "hp": "595"
+        },
+        "wheelbarrow": {
+            "cost": "1000",
+            "hp": "1500"
+        },
+        "scarecrow": {
+            "cost": "1200",
+            "hp": "115"
+        }
+    },
+    "medieval": {
+        "bard": {
+            "cost": "60",
+            "hp": "60"
+        },
+        "squire": {
+            "cost": "100",
+            "hp": "130"
+        },
+        "archer": {
+            "cost": "140",
+            "hp": "40"
+        },
+        "healer": {
+            "cost": "180",
+            "hp": "25"
+        },
+        "knight": {
+            "cost": "650",
+            "hp": "610"
+        },
+        "catapult": {
+            "cost": "1000",
+            "hp": "300"
+        },
+        "the-king": {
+            "cost": "1500",
+            "hp": "2377"
+        }
+    },
+    "ancient": {
+        "shield-bearer": {
+            "cost": "100",
+            "hp": "60"
+        },
+        "sarissa": {
+            "cost": "120",
+            "hp": "40"
+        },
+        "hoplite": {
+            "cost": "180",
+            "hp": "100"
+        },
+        "snake-archer": {
+            "cost": "300",
+            "hp": "50"
+        },
+        "ballista": {
+            "cost": "900",
+            "hp": "300"
+        },
+        "minotaur": {
+            "cost": "1600",
+            "hp": "1656"
+        },
+        "zeus": {
+            "cost": "2000",
+            "hp": "1125"
+        }
+    },
+    "viking": {
+        "headbutter": {
+            "cost": "90",
+            "hp": "55"
+        },
+        "ice-archer": {
+            "cost": "160",
+            "hp": "50"
+        },
+        "brawler": {
+            "cost": "220",
+            "hp": "192"
+        },
+        "berserker": {
+            "cost": "250",
+            "hp": "110"
+        },
+        "valkyrie": {
+            "cost": "500",
+            "hp": "150"
+        },
+        "longship": {
+            "cost": "1000",
+            "hp": "1400"
+        },
+        "jarl": {
+            "cost": "1500",
+            "hp": "1109"
+        }
+    },
+    "dynasty": {
+        "samurai": {
+            "cost": "140",
+            "hp": "120"
+        },
+        "firework-archer": {
+            "cost": "180",
+            "hp": "50"
+        },
+        "monk": {
+            "cost": "250",
+            "hp": "648"
+        },
+        "ninja": {
+            "cost": "500",
+            "hp": "150"
+        },
+        "dragon": {
+            "cost": "1000",
+            "hp": "1500"
+        },
+        "hwacha": {
+            "cost": "1500",
+            "hp": "200"
+        },
+        "monkey-king": {
+            "cost": "2000",
+            "hp": "529"
+        }
+    },
+    "renaissance": {
+        "painter": {
+            "cost": "50",
+            "hp": "60"
+        },
+        "fencer": {
+            "cost": "150",
+            "hp": "70"
+        },
+        "balloon-archer": {
+            "cost": "200",
+            "hp": "80"
+        },
+        "musketeer": {
+            "cost": "250",
+            "hp": "80"
+        },
+        "halberd": {
+            "cost": "400",
+            "hp": "461"
+        },
+        "jouster": {
+            "cost": "1000",
+            "hp": "666"
+        },
+        "da-vinci-tank": {
+            "cost": "4000",
+            "hp": "5000"
+        }
+    },
+    "pirate": {
+        "flintlock": {
+            "cost": "100",
+            "hp": "50"
+        },
+        "blunderbuss": {
+            "cost": "160",
+            "hp": "200"
+        },
+        "bomb-thrower": {
+            "cost": "250",
+            "hp": "150"
+        },
+        "harpooner": {
+            "cost": "300",
+            "hp": "270"
+        },
+        "cannon": {
+            "cost": "1000",
+            "hp": "500"
+        },
+        "captain": {
+            "cost": "1500",
+            "hp": "1165"
+        },
+        "pirate-queen": {
+            "cost": "2500",
+            "hp": "2940"
+        }
+    },
+    "spooky": {
+        "skeleton-warrior": {
+            "cost": "80",
+            "hp": "50"
+        },
+        "skeleton-archer": {
+            "cost": "180",
+            "hp": "52"
+        },
+        "candlehead": {
+            "cost": "200",
+            "hp": "50"
+        },
+        "vampire": {
+            "cost": "200",
+            "hp": "240"
+        },
+        "pumpkin-catapult": {
+            "cost": "1000",
+            "hp": "300"
+        },
+        "swordcaster": {
+            "cost": "1000",
+            "hp": "200"
+        },
+        "reaper": {
+            "cost": "2500",
+            "hp": "1323"
+        }
+    },
+    "wild-west": {
+        "dynamite-thrower": {
+            "cost": "100",
+            "hp": "50"
+        },
+        "miner": {
+            "cost": "200",
+            "hp": "218"
+        },
+        "cactus": {
+            "cost": "432",
+            "hp": "430"
+        },
+        "gunslinger": {
+            "cost": "650",
+            "hp": "50"
+        },
+        "lasso": {
+            "cost": "740",
+            "hp": "545"
+        },
+        "deadeye": {
+            "cost": "900",
+            "hp": "75"
+        },
+        "quick-draw": {
+            "cost": "1200",
+            "hp": "110"
+        }
+    },
+    "legacy": {
+        "peasant": {
+            "cost": "30",
+            "hp": "30"
+        },
+        "banner-bearer": {
+            "cost": "100",
+            "hp": "80"
+        },
+        "poacher": {
+            "cost": "120",
+            "hp": "50"
+        },
+        "blowdarter": {
+            "cost": "220",
+            "hp": "80"
+        },
+        "pike": {
+            "cost": "300",
+            "hp": "40"
+        },
+        "barrel-roller": {
+            "cost": "350",
+            "hp": "40"
+        },
+        "boxer": {
+            "cost": "450",
+            "hp": "292"
+        },
+        "flag-bearer": {
+            "cost": "500",
+            "hp": "80"
+        },
+        "pharaoh": {
+            "cost": "750",
+            "hp": "65"
+        },
+        "wizard": {
+            "cost": "1200",
+            "hp": "926"
+        },
+        "chariot": {
+            "cost": "1800",
+            "hp": "772"
+        },
+        "thor": {
+            "cost": "2200",
+            "hp": "1690"
+        },
+        "tank": {
+            "cost": "6000",
+            "hp": "4500"
+        },
+        "super-boxer": {
+            "cost": "10000",
+            "hp": "4629"
+        },
+        "dark-peasant": {
+            "cost": "9999999",
+            "hp": "1322500"
+        },
+        "super-peasant": {
+            "cost": "9999999",
+            "hp": "132250"
+        }
+    },
+    "fantasy-good": {
+        "devout-gauntlet": {
+            "cost": "200",
+            "hp": "146"
+        },
+        "celestial-aegis": {
+            "cost": "300",
+            "hp": "50"
+        },
+        "radiant-glaive": {
+            "cost": "500",
+            "hp": "180"
+        },
+        "righteous-paladin": {
+            "cost": "800",
+            "hp": "792"
+        },
+        "divine-arbiter": {
+            "cost": "1000",
+            "hp": "50"
+        },
+        "sacred-elephant": {
+            "cost": "2000",
+            "hp": "1800"
+        },
+        "chronomancer": {
+            "cost": "3000",
+            "hp": "1103"
+        }
+    },
+    "fantasy-evil": {
+        "shadow-walker": {
+            "cost": "200",
+            "hp": "54"
+        },
+        "exiled-sentinel": {
+            "cost": "300",
+            "hp": "424"
+        },
+        "mad-mechanic": {
+            "cost": "500",
+            "hp": "242"
+        },
+        "void-cultist": {
+            "cost": "800",
+            "hp": "727"
+        },
+        "tempest-lich": {
+            "cost": "1000",
+            "hp": "80"
+        },
+        "death-bringer": {
+            "cost": "2000",
+            "hp": "1152"
+        },
+        "void-monarch": {
+            "cost": "3000",
+            "hp": "1210"
+        }
+    },
+    "secret": {
+        "ballooner": {
+            "cost": "120",
+            "hp": "120"
+        },
+        "bomb-on-a-stick": {
+            "cost": "150",
+            "hp": "140"
+        },
+        "fan-bearer": {
+            "cost": "200",
+            "hp": "40"
+        },
+        "raptor": {
+            "cost": "200",
+            "hp": "150"
+        },
+        "the-teacher": {
+            "cost": "200",
+            "hp": "130"
+        },
+        "jester": {
+            "cost": "300",
+            "hp": "25"
+        },
+        "ball-n-chain": {
+            "cost": "350",
+            "hp": "397"
+        },
+        "chu-ko-nu": {
+            "cost": "350",
+            "hp": "80"
+        },
+        "executioner": {
+            "cost": "350",
+            "hp": "360"
+        },
+        "shouter": {
+            "cost": "400",
+            "hp": "221"
+        },
+        "taekwondo": {
+            "cost": "400",
+            "hp": "150"
+        },
+        "raptor-rider": {
+            "cost": "450",
+            "hp": "250"
+        },
+        "cheerleader": {
+            "cost": "500",
+            "hp": "5"
+        },
+        "cupid": {
+            "cost": "500",
+            "hp": "84"
+        },
+        "mace-spinner": {
+            "cost": "500",
+            "hp": "726"
+        },
+        "clams": {
+            "cost": "500",
+            "hp": "72"
+        },
+        "present-elf": {
+            "cost": "500",
+            "hp": "50"
+        },
+        "ice-mage": {
+            "cost": "650",
+            "hp": "120"
+        },
+        "infernal-whip": {
+            "cost": "800",
+            "hp": "432"
+        },
+        "bank-robbers": {
+            "cost": "850",
+            "hp": "350"
+        },
+        "witch": {
+            "cost": "1000",
+            "hp": "300"
+        },
+        "banshee": {
+            "cost": "1100",
+            "hp": "300"
+        },
+        "necromancer": {
+            "cost": "1200",
+            "hp": "463"
+        },
+        "solar-architect": {
+            "cost": "1200",
+            "hp": "576"
+        },
+        "wheelbarrow-dragon": {
+            "cost": "1400",
+            "hp": "1500"
+        },
+        "bomb-cannon": {
+            "cost": "1500",
+            "hp": "500"
+        },
+        "skeleton-giant": {
+            "cost": "1700",
+            "hp": "2700"
+        },
+        "calvalry": {
+            "cost": "1800",
+            "hp": "850"
+        },
+        "vlad": {
+            "cost": "1800",
+            "hp": "1080"
+        },
+        "gatling-gun": {
+            "cost": "2000",
+            "hp": "500"
+        },
+        "blackbeard": {
+            "cost": "2600",
+            "hp": "3000"
+        },
+        "samurai-giant": {
+            "cost": "3000",
+            "hp": "4230"
+        },
+        "ullr": {
+            "cost": "3000",
+            "hp": "761"
+        },
+        "lady-red-jade": {
+            "cost": "3500",
+            "hp": "1268"
+        },
+        "sensei": {
+            "cost": "3500",
+            "hp": "100"
+        },
+        "shogun": {
+            "cost": "3500",
+            "hp": "720"
+        },
+        "tree-giant": {
+            "cost": "4000",
+            "hp": "6125"
+        },
+        "artemis": {
+            "cost": "5500",
+            "hp": "661"
+        },
+        "ice-giant": {
+            "cost": "6000",
+            "hp": "12960"
+        }
+    }
+}
