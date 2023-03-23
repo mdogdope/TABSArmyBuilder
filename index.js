@@ -128,10 +128,16 @@ function calculate(){
 }
 
 function generate(){
+	var message = "";
 	for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		var troops = Object.keys(data[categories[iCategory]]);
 		for(var iTroop = 0; iTroop < troops.length; iTroop++){
-			
+			var name = troops[iTroop];
+			var count = document.getElementById(troops[iTroop].concat("Count")).value;
+			if(count !== "0"){
+				message += "(" + name + ":" + count + ") ";
+			}
 		}
 	}
+	document.getElementById("output").innerHTML = message;
 }
