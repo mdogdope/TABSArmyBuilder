@@ -76,6 +76,7 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		troopCount.setAttribute("type", "number");
 		troopCount.setAttribute("onchange", "calculate()");
 		troopCount.id = names[iName].concat("Count");
+		troopCount.min = 0;
 		troopCount.value = 0;
 		
 		var btnPlus = document.createElement("button");
@@ -122,7 +123,9 @@ function updateTroopLists(){
 
 function minus(parent){
 	var count = parent.querySelector("input");
-	count.value--;
+	if(count.value > 0){
+		count.value--;
+	}
 	calculate();
 }
 
