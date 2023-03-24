@@ -91,6 +91,10 @@
 		
 		<!-- Start of troop lists -->
 		<h1>Troop List</h1>
+		<div class="limit-container">
+			<p>Set Limit</p>
+			<input type="number" id="limit" min="0" onchange="setLimit()" value="10000">
+		</div>
 		<div class="troops-container">
 			<div class="tribal">
 				<h2>Tribal</h2>
@@ -270,6 +274,10 @@
 		<div class="container">
 			<h2>Cost: </h2>
 			<h2 id="total">0</h2>
+		</div>
+		<div class="container">
+			<h2 id="remaining-label">Remaining: </h2>
+			<h2 id="remaining">10000</h2>
 		</div>
 		<div class="container">
 			<h2>HP: </h2>

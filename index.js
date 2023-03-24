@@ -6,6 +6,7 @@ window.generate = generate;
 window.copy = copy;
 window.minus = minus;
 window.plus = plus;
+window.setLimit = setLimit;
 
 
 var categories = Object.keys(data);
@@ -21,9 +22,7 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		var name = document.createElement("p");
 		
 		var nameString = names[iName].replaceAll("-", " ");
-		
 		var parts = nameString.split(" ");
-		
 		var buff = "";
 		for(var i = 0; i < parts.length; i++){
 			buff = buff.concat(parts[i][0].toUpperCase() + parts[i].substring(1));
@@ -96,12 +95,14 @@ function minus(parent){
 		count.value--;
 	}
 	calculate();
+	setLimit()
 }
 
 function plus(parent){
 	var count = parent.querySelector("input");
 	count.value++;
 	calculate();
+	setLimit()
 }
 
 function calculate(){
@@ -145,4 +146,20 @@ function generate(){
 function copy(){
 	var message = document.getElementById("output").innerHTML;
 	navigator.clipboard.writeText(message);
+}
+
+
+setLimit();
+function setLimit(){
+	var limit = document.getElementById("limit").value;
+	var total = document.getElementById("total").innerHTML;
+	
+	document.getElementById("remaining").innerHTML = Math.abs(limit - total);
+	
+	if(limit - total < 0){
+		document.getElementById("remaining-label").innerHTML = "Over:";
+	}else{
+		document.getElementById("remaining-label").innerHTML = "Remaining:"
+	}
+	
 }

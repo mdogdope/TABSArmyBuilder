@@ -168,3 +168,15 @@ footer>button {
 #output {
 	margin: 16px;
 }
+
+.limit-container {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.limit-container>p {
+	font-size: 24px;
+	padding: 0px;
+	margin: 0px;
+}
