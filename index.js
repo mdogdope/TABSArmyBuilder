@@ -1,32 +1,5 @@
 import {data} from "./data.js";
 
-// console.log(Object.keys(data));
-
-
-// var troopNode = document.createElement("div");
-// troopNode.innerHTML = "hello";
-// troopNode.className = "troop";
-// document.getElementById("troops").appendChild(troopNode);
-
-
-
-
-
-
-// var troopNode = document.createElement("div");
-// troopNode.className = "troop";
-
-// var troopName = document.createElement("p");
-// troopName.innerHTML = "test";
-
-// var troopCost = document.createElement("p");
-// troopCost.innerHTML = "300";
-
-// troopNode.appendChild(troopName);
-// troopNode.appendChild(troopCost);
-
-// troops.appendChild(troopNode);
-
 window.updateTroopLists = updateTroopLists;
 window.calculate = calculate;
 window.generate = generate;
@@ -104,13 +77,9 @@ function updateTroopLists(){
 		checks = checks.concat(document.getElementById(category).checked);
 	}
 	
-	// console.log(checks.toString())
-	
 // Check if table should be hidden or not.
 	for(var i = 0; i < checks.length; i++){
 		var searchString = categories[i];
-		
-		// console.log(searchString);
 		
 		var table = document.getElementsByClassName(searchString);
 		if(checks[i]){
