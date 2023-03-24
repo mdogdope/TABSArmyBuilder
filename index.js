@@ -30,6 +30,7 @@ import {data} from "./data.js";
 window.updateTroopLists = updateTroopLists;
 window.calculate = calculate;
 window.generate = generate;
+window.copy = copy;
 
 var categories = Object.keys(data);
 
@@ -140,4 +141,10 @@ function generate(){
 		}
 	}
 	document.getElementById("output").innerHTML = message;
+	
+}
+
+function copy(){
+	var message = document.getElementById("output").innerHTML;
+	navigator.clipboard.writeText(message);
 }

@@ -96,6 +96,7 @@ main {
 	margin: 0px 16px;
 }
 
+/* Styling for the footer */
 footer {
 	background-color: var(--accent-1);
 	display: flex;
@@ -119,10 +120,33 @@ footer>button {
 	font-size: 24px;
 }
 
-#output-container {
+/* Styling for the output box. */
+.output-container {
+	background-color: var(--accent-1);
+	
 	width: 100%;
 	border-style: solid;
 	border-radius: 16px;
+}
+
+.output-header {
+	display: flex;
+	align-items: center;
+}
+
+.output-header>h2 {
+	margin: 16px;
+}
+
+.output-header>img {
+	width: 32px;
+	margin-left: auto;
+	margin-right: 16px;
+	border-radius: 8px;
+}
+
+.output-header>img:hover {
+	background-color: var(--text);
 }
 
 #output {
