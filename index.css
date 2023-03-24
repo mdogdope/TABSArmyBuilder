@@ -8,6 +8,19 @@
 	
 }
 
+/* Remove arrows from input numbers */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 html {
 	background-color: var(--background);
 }
@@ -92,8 +105,11 @@ main {
 	margin: auto;
 }
 
-.selector>p {
-	margin: 0px 16px;
+.selector>input {
+	width: 48px;
+	text-align: center;
+	background-color: var(--accent-2);
+	border-style: none;
 }
 
 /* Styling for the footer */
