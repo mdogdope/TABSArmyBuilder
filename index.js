@@ -31,6 +31,9 @@ window.updateTroopLists = updateTroopLists;
 window.calculate = calculate;
 window.generate = generate;
 window.copy = copy;
+window.minus = minus;
+window.plus = plus;
+
 
 var categories = Object.keys(data);
 
@@ -62,18 +65,32 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		var hp = document.createElement("p");
 		hp.innerHTML = data[categories[iCategory]][names[iName]].hp;
 		
+		var selector = document.createElement("div");
+		selector.className = "selector"
+		
+		var btnMinus = document.createElement("button");
+		btnMinus.setAttribute("onclick", "minus(this.parentElement)");
+		btnMinus.innerHTML = "-";
+		
 		var troopCount = document.createElement("input");
-		troopCount.setAttribute("type", "number")
+		troopCount.setAttribute("type", "number");
+		troopCount.setAttribute("onchange", "calculate()");
 		troopCount.id = names[iName].concat("Count");
-		troopCount.setAttribute("onChange", "calculate()");
-		troopCount.style.margin = "8px";
-		troopCount.defaultValue = 0;
-		troopCount.min = 0;
+		troopCount.value = 0;
+		
+		var btnPlus = document.createElement("button");
+		btnPlus.setAttribute("onclick", "plus(this.parentElement)");
+		btnPlus.innerHTML = "+";
+		
+		selector.appendChild(btnMinus);
+		selector.appendChild(troopCount);
+		selector.appendChild(btnPlus);
+		
 		
 		table.appendChild(name);
 		table.appendChild(cost);
 		table.appendChild(hp);
-		table.appendChild(troopCount);
+		table.appendChild(selector);
 	}
 }
 
@@ -103,10 +120,19 @@ function updateTroopLists(){
 	}
 }
 
+function minus(parent){
+	var count = parent.querySelector("input");
+	count.value--;
+	calculate();
+}
+
+function plus(parent){
+	var count = parent.querySelector("input");
+	count.value++;
+	calculate();
+}
+
 function calculate(){
-	
-	// document.getElementById("total").innerHTML = document.getElementById("clubberCount").value;
-	
 	var totalCost = 0;
 	var totalHp = 0;
 	var totalTroops = 0;
