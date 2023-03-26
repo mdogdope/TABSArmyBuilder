@@ -180,8 +180,6 @@ function setLimit(){
 function updateRemaining(){
 	var totalLeft = Number(document.getElementById("remaining").innerHTML);
 	
-	// console.log();
-	
 	for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		var troops = Object.keys(data[categories[iCategory]]);
 		for(var iTroop = 0; iTroop < troops.length; iTroop++){
