@@ -42,6 +42,9 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		
 		var btnMinus = document.createElement("button");
 		btnMinus.setAttribute("onclick", "minus(this.parentElement)");
+		btnMinus.className = "minus";
+		btnMinus.disabled = true;
+		btnMinus.id = categories[iCategory] + "-" + names[iName] + "Minus"
 		btnMinus.innerHTML = "-";
 		
 		var troopCount = document.createElement("input");
@@ -53,6 +56,8 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		
 		var btnPlus = document.createElement("button");
 		btnPlus.setAttribute("onclick", "plus(this.parentElement)");
+		btnPlus.className = "plus";
+		btnPlus.id = categories[iCategory] + "-" + names[iName] + "Plus"
 		btnPlus.innerHTML = "+";
 		
 		selector.appendChild(btnMinus);
@@ -94,15 +99,23 @@ function minus(parent){
 	if(count.value > 0){
 		count.value--;
 	}
+	
+	if(count.value <= 0){
+		parent.querySelector(".minus").disabled = true;
+	}
+	
 	calculate();
-	setLimit()
+	setLimit();
+	updateRemaining();
 }
 
 function plus(parent){
 	var count = parent.querySelector("input");
 	count.value++;
+	parent.querySelector(".minus").disabled = false;
 	calculate();
-	setLimit()
+	setLimit();
+	updateRemaining();
 }
 
 function calculate(){
@@ -160,6 +173,26 @@ function setLimit(){
 		document.getElementById("remaining-label").innerHTML = "Over:";
 	}else{
 		document.getElementById("remaining-label").innerHTML = "Remaining:"
+	}
+	updateRemaining();
+}
+
+function updateRemaining(){
+	var totalLeft = Number(document.getElementById("remaining").innerHTML);
+	
+	// console.log();
+	
+	for(var iCategory = 0; iCategory < categories.length; iCategory++){
+		var troops = Object.keys(data[categories[iCategory]]);
+		for(var iTroop = 0; iTroop < troops.length; iTroop++){
+			var cost = data[categories[iCategory]][troops[iTroop]].cost;
+			console.log(totalLeft);
+			if(cost > totalLeft){
+				document.getElementById(categories[iCategory] + "-" + troops[iTroop] + "Plus").disabled = true;
+			}else{
+				document.getElementById(categories[iCategory] + "-" + troops[iTroop] + "Plus").disabled = false;
+			}
+		}
 	}
 	
 }
