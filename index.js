@@ -6,6 +6,7 @@ window.generate = generate;
 window.copy = copy;
 window.minus = minus;
 window.plus = plus;
+window.setLimit = setLimit;
 
 
 var categories = Object.keys(data);
@@ -21,9 +22,7 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		var name = document.createElement("p");
 		
 		var nameString = names[iName].replaceAll("-", " ");
-		
 		var parts = nameString.split(" ");
-		
 		var buff = "";
 		for(var i = 0; i < parts.length; i++){
 			buff = buff.concat(parts[i][0].toUpperCase() + parts[i].substring(1));
@@ -43,6 +42,9 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		
 		var btnMinus = document.createElement("button");
 		btnMinus.setAttribute("onclick", "minus(this.parentElement)");
+		btnMinus.className = "minus";
+		btnMinus.disabled = true;
+		btnMinus.id = categories[iCategory] + "-" + names[iName] + "Minus"
 		btnMinus.innerHTML = "-";
 		
 		var troopCount = document.createElement("input");
@@ -54,6 +56,8 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		
 		var btnPlus = document.createElement("button");
 		btnPlus.setAttribute("onclick", "plus(this.parentElement)");
+		btnPlus.className = "plus";
+		btnPlus.id = categories[iCategory] + "-" + names[iName] + "Plus"
 		btnPlus.innerHTML = "+";
 		
 		selector.appendChild(btnMinus);
@@ -95,13 +99,23 @@ function minus(parent){
 	if(count.value > 0){
 		count.value--;
 	}
+	
+	if(count.value <= 0){
+		parent.querySelector(".minus").disabled = true;
+	}
+	
 	calculate();
+	setLimit();
+	updateRemaining();
 }
 
 function plus(parent){
 	var count = parent.querySelector("input");
 	count.value++;
+	parent.querySelector(".minus").disabled = false;
 	calculate();
+	setLimit();
+	updateRemaining();
 }
 
 function calculate(){
@@ -145,4 +159,40 @@ function generate(){
 function copy(){
 	var message = document.getElementById("output").innerHTML;
 	navigator.clipboard.writeText(message);
+}
+
+
+setLimit();
+function setLimit(){
+	var limit = document.getElementById("limit").value;
+	var total = document.getElementById("total").innerHTML;
+	
+	document.getElementById("remaining").innerHTML = Math.abs(limit - total);
+	
+	if(limit - total < 0){
+		document.getElementById("remaining-label").innerHTML = "Over:";
+	}else{
+		document.getElementById("remaining-label").innerHTML = "Remaining:"
+	}
+	updateRemaining();
+}
+
+function updateRemaining(){
+	var totalLeft = Number(document.getElementById("remaining").innerHTML);
+	
+	// console.log();
+	
+	for(var iCategory = 0; iCategory < categories.length; iCategory++){
+		var troops = Object.keys(data[categories[iCategory]]);
+		for(var iTroop = 0; iTroop < troops.length; iTroop++){
+			var cost = data[categories[iCategory]][troops[iTroop]].cost;
+			console.log(totalLeft);
+			if(cost > totalLeft){
+				document.getElementById(categories[iCategory] + "-" + troops[iTroop] + "Plus").disabled = true;
+			}else{
+				document.getElementById(categories[iCategory] + "-" + troops[iTroop] + "Plus").disabled = false;
+			}
+		}
+	}
+	
 }
