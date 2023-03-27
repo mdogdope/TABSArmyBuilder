@@ -138,6 +138,7 @@ function calculate(){
 	document.getElementById("total").innerHTML = totalCost;
 	document.getElementById("hp").innerHTML = totalHp;
 	document.getElementById("troopCount").innerHTML = totalTroops;
+	setLimit();
 }
 
 function generate(){
