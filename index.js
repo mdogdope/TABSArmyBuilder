@@ -8,7 +8,6 @@ window.minus = minus;
 window.plus = plus;
 window.setLimit = setLimit;
 
-
 var categories = Object.keys(data);
 
 
@@ -20,9 +19,11 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 	
 	for(var iName = 0; iName < names.length; iName++){
 		var name = document.createElement("p");
+		name.className = "tooltip";
 		
 		var nameString = names[iName].replaceAll("-", " ");
 		var parts = nameString.split(" ");
+		
 		var buff = "";
 		for(var i = 0; i < parts.length; i++){
 			buff = buff.concat(parts[i][0].toUpperCase() + parts[i].substring(1));
@@ -30,6 +31,12 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		}
 		
 		name.innerHTML = buff;
+		
+		var tooltipText = document.createElement("img");
+		tooltipText.className = "tooltiptext";
+		tooltipText.src = "images/" + names[iName] + ".webp";
+		
+		name.appendChild(tooltipText);
 		
 		var cost = document.createElement("p");
 		cost.innerHTML = data[categories[iCategory]][names[iName]].cost;
@@ -185,7 +192,7 @@ function updateRemaining(){
 		var troops = Object.keys(data[categories[iCategory]]);
 		for(var iTroop = 0; iTroop < troops.length; iTroop++){
 			var cost = data[categories[iCategory]][troops[iTroop]].cost;
-			console.log(totalLeft);
+			
 			if(cost > totalLeft){
 				document.getElementById(categories[iCategory] + "-" + troops[iTroop] + "Plus").disabled = true;
 			}else{
