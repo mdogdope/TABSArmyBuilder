@@ -91,9 +91,12 @@
 		
 		<!-- Start of troop lists -->
 		<h1>Troop List</h1>
-		<div class="limit-container">
-			<p>Set Limit</p>
-			<input type="number" id="limit" min="0" onchange="setLimit()" value="10000">
+		<div class="troop-list-header">
+			<div class="limit-container">
+				<p>Set Limit</p>
+				<input type="number" id="limit" min="0" onchange="setLimit()" value="10000">
+			</div>
+			<button onclick="autoFill()">Auto Fill Rest</button>
 		</div>
 		<div class="troops-container">
 			<div class="tribal">
