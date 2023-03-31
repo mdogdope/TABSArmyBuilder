@@ -8,6 +8,7 @@ window.minus = minus;
 window.plus = plus;
 window.setLimit = setLimit;
 window.autoFill = autoFill;
+window.clearAll = clearAll;
 
 var categories = Object.keys(data);
 
@@ -155,6 +156,7 @@ function updateTroopLists(){
 			table[0].style.display = "block";
 		}else{
 			table[0].style.display = "none";
+			clearList(searchString);
 		}
 	}
 }
@@ -258,5 +260,20 @@ function updateRemaining(){
 			}
 		}
 	}
-	
+}
+
+
+function clearAll(){
+	for(var iCategory = 0; iCategory < categories.length; iCategory++){
+		clearList(categories[iCategory]);
+	}
+}
+
+function clearList(listName){
+	var troops = Object.keys(data[listName]);
+	for(var iTroop = 0; iTroop < troops.length; iTroop++){
+		while(document.getElementById(troops[iTroop] + "Count").value > 0){
+			minus(document.getElementById(troops[iTroop] + "Count").parentElement);
+		}
+	}
 }
