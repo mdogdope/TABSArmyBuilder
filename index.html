@@ -22,69 +22,69 @@
 <body>
 	<h1 class="title">TABS Calculator</h1>
 	<main>
-		<p class="desc">Build your team!</p>
+		<p class="desc">Build your army!</p>
 		
 		<!-- Start of category lists -->
 		<div class="categories-container">
 			<div class="categories">
 				<h3>Base Troop Categories</h3>
 				<div class="category">
-					<input type="checkbox" id="tribal" checked onclick="updateTroopLists()">
+					<input type="checkbox" id="tribalCheck" checked onclick="updateTroopLists()">
 					<p>Tribal</p>
 				</div>
 				<div class="category">
-					<input type="checkbox" id="farmer" checked onclick="updateTroopLists()">
+					<input type="checkbox" id="farmerCheck" checked onclick="updateTroopLists()">
 					<p>Farmer</p>
 				</div>
 				<div class="category">
-					<input type="checkbox" id="medieval" checked onclick="updateTroopLists()">
+					<input type="checkbox" id="medievalCheck" checked onclick="updateTroopLists()">
 					<p>Medieval</p>
 				</div>
 				<div class="category">
-					<input type="checkbox" id="ancient" checked onclick="updateTroopLists()">
+					<input type="checkbox" id="ancientCheck" checked onclick="updateTroopLists()">
 					<p>Ancient</p>
 				</div>
 				<div class="category">
-					<input type="checkbox" id="viking" checked onclick="updateTroopLists()">
+					<input type="checkbox" id="vikingCheck" checked onclick="updateTroopLists()">
 					<p>Viking</p>
 				</div>
 				<div class="category">
-					<input type="checkbox" id="dynasty" checked onclick="updateTroopLists()">
+					<input type="checkbox" id="dynastyCheck" checked onclick="updateTroopLists()">
 					<p>Dynasty</p>
 				</div>
 				<div class="category">
-					<input type="checkbox" id="renaissance" checked onclick="updateTroopLists()">
+					<input type="checkbox" id="renaissanceCheck" checked onclick="updateTroopLists()">
 					<p>Renaissance</p>
 				</div>
 				<div class="category">
-					<input type="checkbox" id="pirate" checked onclick="updateTroopLists()">
+					<input type="checkbox" id="pirateCheck" checked onclick="updateTroopLists()">
 					<p>Pirate</p>
 				</div>
 				<div class="category">
-					<input type="checkbox" id="spooky" checked onclick="updateTroopLists()">
+					<input type="checkbox" id="spookyCheck" checked onclick="updateTroopLists()">
 					<p>Spooky</p>
 				</div>
 				<div class="category">
-					<input type="checkbox" id="wild-west" checked onclick="updateTroopLists()">
+					<input type="checkbox" id="wild-westCheck" checked onclick="updateTroopLists()">
 					<p>Wild West</p>
 				</div>
 			</div>
 			<div class="categories">
 				<h3>Bonus Troop Categories</h3>
 				<div class="category">
-					<input type="checkbox" id="legacy" onclick="updateTroopLists()">
+					<input type="checkbox" id="legacyCheck" onclick="updateTroopLists()">
 					<p>Legacy</p>
 				</div>
 				<div class="category">
-					<input type="checkbox" id="fantasy-good" onclick="updateTroopLists()">
+					<input type="checkbox" id="fantasy-goodCheck" onclick="updateTroopLists()">
 					<p>Fantasy Good</p>
 				</div>
 				<div class="category">
-					<input type="checkbox" id="fantasy-evil" onclick="updateTroopLists()">
+					<input type="checkbox" id="fantasy-evilCheck" onclick="updateTroopLists()">
 					<p>Fantasy Evil</p>
 				</div>
 				<div class="category">
-					<input type="checkbox" id="secret" onclick="updateTroopLists()">
+					<input type="checkbox" id="secretCheck" onclick="updateTroopLists()">
 					<p>Secret</p>
 				</div>
 			</div>
@@ -100,9 +100,11 @@
 		
 		<!-- Start of troop lists -->
 		<h1>Troop List</h1>
-		<div class="limit-container">
-			<p>Set Limit</p>
-			<input type="number" id="limit" min="0" onchange="setLimit()" value="10000">
+		<div class="troop-list-header">
+			<div class="limit-container">
+				<p>Set Limit</p>
+				<input type="number" id="limit" min="0" onchange="setLimit()" value="10000">
+			</div>
 		</div>
 		<div class="troops-container">
 			<div class="tribal">
@@ -295,6 +297,10 @@
 			<h2 id="troopCount">0</h2>
 		</div>
 		<button onclick="generate()">Generate Message</button>
+<<<<<<< HEAD
+=======
+		<button onclick="autoFill()">Auto Fill Rest</button>
+>>>>>>> b7eb92aed51467a56ab59cf9ebebf053fa86f8c5
 	</footer>
 	<!-- End of the footer -->
 </body>
