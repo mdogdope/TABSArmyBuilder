@@ -7,6 +7,7 @@ window.copy = copy;
 window.minus = minus;
 window.plus = plus;
 window.setLimit = setLimit;
+window.autoFill = autoFill;
 
 var categories = Object.keys(data);
 
@@ -79,6 +80,63 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 	}
 }
 
+function autoFill(){
+	var pointsLeft = Number(document.getElementById("remaining").innerHTML);
+	
+	
+	// Make an array of booleans that determine if list is included.
+	var checks = [];
+	for(var i = 0; i < categories.length; i++){
+		var category = categories[i];
+		checks = checks.concat(document.getElementById(category + "Check").checked);
+	}
+	
+	// Find the lowest priced troop in the selected lists.
+	var lowestCost = 9999999;
+	for(var iCategory = 0; iCategory < categories.length; iCategory++){
+		if(checks[iCategory]){
+			var troops = Object.keys(data[categories[iCategory]])
+			for(var iTroop = 0; iTroop < troops.length; iTroop++){
+				var cost = Number(data[categories[iCategory]][troops[iTroop]].cost);
+				if(cost < lowestCost){
+					lowestCost = cost;
+				}
+			}
+		}
+	}
+	
+	// Loop through available troops and add a random one to army.
+	while(pointsLeft >= lowestCost){
+		var availableTroops = [];
+		for(var iCategory = 0; iCategory < categories.length; iCategory++){
+			if(checks[iCategory]){
+				var troops = Object.keys(data[categories[iCategory]]);
+				for(var iTroop = 0; iTroop < troops.length; iTroop++){
+					var cost = Number(data[categories[iCategory]][troops[iTroop]].cost);
+					if(cost <= pointsLeft){
+						availableTroops = availableTroops.concat(troops[iTroop]);
+					}
+				}
+			}
+		}
+		
+		// Pick and add one troop to the army.
+		var choiceNum = Math.floor(Math.random() * availableTroops.length);
+		var choice = availableTroops[choiceNum];
+		
+		for(var iCategory = 0; iCategory < categories.length; iCategory++){
+			var troops = Object.keys(data[categories[iCategory]]);
+			for(var iTroop = 0; iTroop < troops.length; iTroop++){
+				if(choice === troops[iTroop]){
+					var counter = document.getElementById(troops[iTroop] + "Count").parentElement;
+					plus(counter);
+					pointsLeft -= Number(data[categories[iCategory]][troops[iTroop]].cost);
+				}
+			}
+		}
+	}
+}
+
 updateTroopLists();
 function updateTroopLists(){
 	
@@ -88,7 +146,7 @@ function updateTroopLists(){
 		checks = checks.concat(document.getElementById(category + "Check").checked);
 	}
 	
-// Check if table should be hidden or not.
+	// Check if table should be hidden or not.
 	for(var i = 0; i < checks.length; i++){
 		var searchString = categories[i];
 		
