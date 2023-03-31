@@ -85,7 +85,7 @@ function updateTroopLists(){
 	var checks = [];
 	for(var i = 0; i < categories.length; i++){
 		var category = categories[i];
-		checks = checks.concat(document.getElementById(category).checked);
+		checks = checks.concat(document.getElementById(category + "Check").checked);
 	}
 	
 // Check if table should be hidden or not.
