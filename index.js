@@ -1,5 +1,6 @@
 import {data} from "./data.js";
 
+window.autoFill = autoFill;
 window.updateTroopLists = updateTroopLists;
 window.calculate = calculate;
 window.generate = generate;
@@ -7,7 +8,6 @@ window.copy = copy;
 window.minus = minus;
 window.plus = plus;
 window.setLimit = setLimit;
-window.autoFill = autoFill;
 window.clearAll = clearAll;
 
 var categories = Object.keys(data);
@@ -238,7 +238,7 @@ function setLimit(){
 	document.getElementById("remaining").innerHTML = Math.abs(limit - total);
 	
 	if(limit - total < 0){
-		document.getElementById("remaining-label").innerHTML = "Over:";
+		document.getElementById("remaining-label").innerHTML = "Over by:";
 	}else{
 		document.getElementById("remaining-label").innerHTML = "Remaining:"
 	}
