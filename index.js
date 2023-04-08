@@ -21,7 +21,6 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 	
 	for(var iName = 0; iName < names.length; iName++){
 		var name = document.createElement("p");
-		name.className = "tooltip";
 		
 		var nameString = names[iName].replaceAll("-", " ");
 		var parts = nameString.split(" ");
@@ -34,21 +33,29 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		
 		name.innerHTML = buff;
 		
+		
+		// Adds pop up image when hoving over a name.
+		name.className = "tooltip";
 		var tooltipText = document.createElement("img");
 		tooltipText.className = "tooltiptext";
 		tooltipText.src = "images/" + names[iName] + ".webp";
 		
 		name.appendChild(tooltipText);
 		
+		
+		// Create the cost element for the troop.
 		var cost = document.createElement("p");
 		cost.innerHTML = data[categories[iCategory]][names[iName]].cost;
 		
+		// Create the hp element for the troop.
 		var hp = document.createElement("p");
 		hp.innerHTML = data[categories[iCategory]][names[iName]].hp;
 		
+		// Make a container for the count indicator and the plus/minus buttons.
 		var selector = document.createElement("div");
 		selector.className = "selector"
 		
+		// Create the minus button for the troop.
 		var btnMinus = document.createElement("button");
 		btnMinus.setAttribute("onclick", "minus(this.parentElement)");
 		btnMinus.className = "minus";
@@ -56,6 +63,7 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		btnMinus.id = categories[iCategory] + "-" + names[iName] + "Minus"
 		btnMinus.innerHTML = "-";
 		
+		// Create the input element for the troop to show the count.
 		var troopCount = document.createElement("input");
 		troopCount.setAttribute("type", "number");
 		troopCount.setAttribute("onchange", "calculate()");
@@ -63,17 +71,19 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 		troopCount.min = 0;
 		troopCount.value = 0;
 		
+		// Create the plus button for the troop.
 		var btnPlus = document.createElement("button");
 		btnPlus.setAttribute("onclick", "plus(this.parentElement)");
 		btnPlus.className = "plus";
 		btnPlus.id = categories[iCategory] + "-" + names[iName] + "Plus"
 		btnPlus.innerHTML = "+";
 		
+		// Add plus minus and counter to the selector element.
 		selector.appendChild(btnMinus);
 		selector.appendChild(troopCount);
 		selector.appendChild(btnPlus);
 		
-		
+		// Add all the child elements to the parent grid.
 		table.appendChild(name);
 		table.appendChild(cost);
 		table.appendChild(hp);
@@ -81,6 +91,8 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 	}
 }
 
+// This function will spend all remainging points on random troops.
+// Called when the user hits the "Auto Fill Rest" button.
 function autoFill(){
 	var pointsLeft = Number(document.getElementById("remaining").innerHTML);
 	
@@ -138,7 +150,10 @@ function autoFill(){
 	}
 }
 
+// Run the function once to make sure everything is displayed correctly on refresh.
 updateTroopLists();
+// This function will show and hide lists.
+// Called when a category is checked or unchecked.
 function updateTroopLists(){
 	
 	var checks = [];
@@ -161,6 +176,8 @@ function updateTroopLists(){
 	}
 }
 
+// Reduces the counter for the desired troop by one if not 0.
+// Called each time a minus button is clicked and is passed the parent element.
 function minus(parent){
 	var count = parent.querySelector("input");
 	if(count.value > 0){
@@ -176,6 +193,8 @@ function minus(parent){
 	updateRemaining();
 }
 
+// Increases the counter for the desired troop by one.
+// Called each time a plus button is clicked and is passed the parent element.
 function plus(parent){
 	var count = parent.querySelector("input");
 	count.value++;
@@ -185,6 +204,8 @@ function plus(parent){
 	updateRemaining();
 }
 
+// Calculates the totals listed at the bottom of the page.
+// Called when ever a plus/minus is clicked or when an input is changed.
 function calculate(){
 	var totalCost = 0;
 	var totalHp = 0;

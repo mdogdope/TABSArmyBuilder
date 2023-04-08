@@ -8,15 +8,14 @@
 	
 }
 
-/* Remove arrows from input numbers */
-/* Chrome, Safari, Edge, Opera */
+/* Remove number input arrows from Chrome, Safari, Edge, and Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Firefox */
+/* Remove number input arrows from Firefox */
 input[type=number] {
   -moz-appearance: textfield;
 }
@@ -48,6 +47,7 @@ main {
 	text-align: center;
 }
 
+/* Styling for the troop lists. */
 .categories-container {
 	display: grid;
 	grid-template-columns: max-content max-content 1fr;
