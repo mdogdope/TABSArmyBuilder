@@ -136,6 +136,10 @@ footer>button {
 	font-size: 24px;
 }
 
+footer>form {
+	margin: auto 0px;
+}
+
 /* Styling for the output box. */
 .output-container {
 	background-color: var(--accent-1);
