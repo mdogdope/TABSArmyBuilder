@@ -13,13 +13,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 $sql = "INSERT INTO users (ipaddress) VALUES ('$ip')";
 
 if ($conn->query($sql) === TRUE){
-	echo "Saved IP";
 }else {
-	echo "Error: " . $sql . "<br>" . $conn->error;
+	$sqlUpdate = "UPDATE users SET timestamp = CURRENT_TIMESTAMP WHERE ipaddress = '$ip'";
+	$conn->query($sqlUpdate);
 }
 
 $conn->close();
-
 ?>
 
 <html lang="en">
