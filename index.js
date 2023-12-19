@@ -31,7 +31,7 @@ for(var iCategory = 0; iCategory < categories.length; iCategory++){
 			buff += " ";
 		}
 		
-		name.innerHTML = buff;
+		name.innerHTML = buff.trim();
 		
 		
 		// Adds pop up image when hoving over a name.
