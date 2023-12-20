@@ -3,11 +3,6 @@
 <?php  
 $ip = $_SERVER['REMOTE_ADDR'];
 
-$servername = "sql202.epizy.com";
-$username = "epiz_34058658";
-$password = "u1Lj2kEVSj330OV";
-$dbname = "epiz_34058658_users";
-
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 $sql = "INSERT INTO users (ipaddress) VALUES ('$ip')";
